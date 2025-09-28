@@ -520,9 +520,9 @@
 <h2 id="_1">设置步骤</h2>
 <p>假设项目名称为：techdocs。</p>
 <ol>
-<li>
-<p>仓库结构
- <code>bash
+<li>仓库结构</li>
+</ol>
+<p><code>bash
  techdocs/
  ├── docs/  # 文档目录，所有md文档都在这个目录及子目录下
  │   ├── index.md  
@@ -531,104 +531,102 @@
  └── .github/
      └── workflows/
          └── deploy.yml  #GitHub Actions 工作流</code></p>
-</li>
-<li>
-<p>创建仓库</p>
-</li>
+<ol>
+<li>创建仓库</li>
 </ol>
 <p>在 Github 上创建一个仓库 techdocs。</p>
 <ol>
-<li>本地设置
- 建立一个目录techdocs，目录下的结构同上面的仓库结构。
- 配置 GitHub Actions 工作流
- 在仓库里新建文件： .github/workflows/deploy.yml
- ```yaml
- # .github/workflows/deploy.yml
- name: Deploy MkDocs Site</li>
+<li>本地设置</li>
 </ol>
-<p># 触发条件：当推送到 main 分支时
- on:
-   push:
-     branches:
-       - main</p>
-<p>jobs:
-   deploy:
-     # 运行在 GitHub 提供的虚拟机ubuntu上
-     runs-on: ubuntu-latest</p>
-<pre><code> steps:
-   # 1. 检出仓库代码
-   - name: Checkout code
-     uses: actions/checkout@v4
+<p>建立一个目录techdocs，目录下的结构同上面的仓库结构。
+配置 GitHub Actions 工作流
+在仓库里新建文件： .github/workflows/deploy.yml</p>
+<pre><code class="language-yaml"># .github/workflows/deploy.yml
+name: Deploy MkDocs Site
 
-   # 2. 设置 Python 环境
-   - name: Set up Python
-     uses: actions/setup-python@v5
-     with:
-       python-version: 3.x
+# 触发条件：当推送到 main 分支时
+on:
+  push:
+    branches:
+      - main
 
-   # 3. 安装 MkDocs 和主题
-   - name: Install dependencies
-     run: |
-       pip install mkdocs
-       # 下面按照mkdocs主题
-       pip install mkdocs-material
-       pip install mkdocs-awesome-pages-plugin
-       # 如果需要其他插件，也在这里安装，例如：
-       # pip install mkdocs-minify-plugin
+jobs:
+  deploy:
+    # 运行在 GitHub 提供的虚拟机上
+    runs-on: ubuntu-latest
 
-   # 4. 构建网站（生成 site/ 目录）
-   - name: Build site
-     run: mkdocs build
+    steps:
+      # 1. 检出仓库代码
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-   # 5. 部署到 GitHub Pages
-   - name: Deploy to GitHub Pages
-     uses: peaceiris/actions-gh-pages@v3
-     with:
-       github_token: ${{ secrets.GITHUB_TOKEN }}
-       publish_dir: ./site
+      # 2. 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      # 3. 安装 MkDocs 和主题
+      - name: Install dependencies
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
+          pip install mkdocs-awesome-pages-plugin
+          # 如果你在 mkdocs.yml 中使用了 material 主题
+          # 如果需要其他插件，也在这里安装，例如：
+          # pip install mkdocs-minify-plugin
+
+      # 4. 构建网站（生成 site/ 目录）
+      - name: Build site
+        run: mkdocs build
+
+      # 5. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
 </code></pre>
-<p>```</p>
 <ol>
-<li>设置mkdocs
- 在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：
- ```yaml
- site_name: 我的笔记   # 项目名称
- docs_dir: docs       # 指定文档目录，缺省是docs</li>
+<li>设置mkdocs</li>
 </ol>
-<p>plugins:             # 使用的插件
-   - search
-   - awesome-pages    # 在deploy.yml中，pip install mkdocs-awesome-pages-plugin</p>
-<p>theme:               # 使用的主题
-   name: material。   # 在deploy.yml中，ip install mkdocs-material
-   language: zh       # 主题的语言
- ``` </p>
+<p>在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：</p>
+<pre><code class="language-yaml">site_name: 我的笔记   # 项目名称
+docs_dir: docs       # 指定文档目录，缺省是docs
+
+plugins:             # 使用的插件
+  - search
+  - awesome-pages    # 在deploy.yml中，pip install mkdocs-awesome-pages-plugin
+
+theme:               # 使用的主题
+  name: material。   # 在deploy.yml中，ip install mkdocs-material
+  language: zh       # 主题的语言
+</code></pre>
 <ol>
-<li>
-<p>写markdown文档
- docs目录下可以建立子目录，例如：linux、github等。
- 首先，编写index.md，例如：
- <code>markdown
- # 欢迎来到shanren的学习笔记
- 这里是我的计算机技术学习笔记，使用 Markdown 编写。</code> </p>
-</li>
-<li>
-<p>连上仓库
- <code>bash
- git init
- git add .
- git commit -m "first commit"
- git branch -M main
- git remote add origin git@github.com:&lt;username&gt;/techdocs.git
- git push -u origin main</code></p>
-</li>
-<li>
-<p>启用 GitHub Pages <br />
- 打开 GitHub 项目 → Settings → Pages
- Source 选择 gh-pages 分支
- 保存后，网站会出现在 https://你的用户名.github.io/你的项目/
- 这样，你的开发机上 完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。</p>
-</li>
+<li>写markdown文档</li>
 </ol>
+<p>docs目录下可以建立子目录，例如：linux、github等。
+首先，编写index.md，例如：</p>
+<pre><code class="language-markdown"># 欢迎来到shanren的学习笔记
+这里是我的计算机技术学习笔记，使用 Markdown 编写。
+</code></pre>
+<ol>
+<li>连上仓库</li>
+</ol>
+<pre><code class="language-bash">git init
+git add .
+git commit -m &quot;first commit&quot;
+git branch -M main
+git remote add origin git@github.com:&lt;username&gt;/techdocs.git
+git push -u origin main
+</code></pre>
+<ol>
+<li>启用 GitHub Pages</li>
+</ol>
+<p>打开 GitHub 项目 → Settings → Pages
+Source 选择 gh-pages 分支
+保存后，网站会出现在 https://你的用户名.github.io/你的项目/
+这样，你的开发机上 完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。</p>
 
 
 
