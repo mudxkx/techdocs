@@ -1,9 +1,23 @@
-site_name: 学习笔记
-
 dev_addr: 0.0.0.0:8000
+docs_dir: notes
 
-nav:
-  - Home: index.md
-  - About: about.md
+site_name: 学习笔记
+plugins:
+  - search
+  - awesome-pages
+
 theme:
   name: material
+  custom_dir: overrides
+
+extra:
+  generator: false
+
+extra_css:
+  - styles/footer.css
+
+exclude_docs: |
+  .git/
+  .gitignore
+  notes.code-workspace
+  README.md

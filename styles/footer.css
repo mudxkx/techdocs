@@ -1,0 +1,18 @@
+.custom-footer {
+  width: 100%;
+  background-color: var(--md-primary-fg-color) !important;  /* !important 确保覆盖 */
+  padding: 0.8em 0;
+  box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  color: white !important;          /* 确保文字白色 */
+  font-size: 0.6rem;
+}
+
+.footer-content p {
+  margin: 0;
+}
