@@ -532,15 +532,17 @@
         └── deploy.yml  #GitHub Actions 工作流
 </code></pre>
 <ol>
-<li>在Github上创建仓库</li>
-</ol>
-<p>创建一个仓库 techdocs。</p>
-<ol>
-<li>本地设置</li>
-</ol>
-<p>建立一个目录techdocs，目录下的结构同上面的仓库结构。
+<li>
+<p>在Github上创建仓库
+创建一个仓库 techdocs。</p>
+</li>
+<li>
+<p>本地设置
+建立一个目录techdocs，目录下的结构同上面的仓库结构。
 配置 GitHub Actions 工作流
 在仓库里新建文件： .github/workflows/deploy.yml</p>
+</li>
+</ol>
 <pre><code class="language-yaml"># .github/workflows/deploy.yml
 name: Deploy MkDocs Site
 
@@ -588,9 +590,9 @@ jobs:
           publish_dir: ./site
 </code></pre>
 <ol>
-<li>设置mkdocs</li>
+<li>设置mkdocs
+在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：</li>
 </ol>
-<p>在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：</p>
 <pre><code class="language-yaml">site_name: 我的笔记   # 项目名称
 docs_dir: docs       # 指定文档目录，缺省是docs
 
@@ -611,7 +613,7 @@ theme:               # 使用的主题
 这里是我的计算机技术学习笔记，使用 Markdown 编写。
 </code></pre>
 <ol>
-<li>连上仓库：</li>
+<li>连上仓库</li>
 </ol>
 <pre><code class="language-bash">git init
 git add .
@@ -621,12 +623,12 @@ git remote add origin git@github.com:&lt;username&gt;/techdocs.git
 git push -u origin main
 </code></pre>
 <ol>
-<li>启用 GitHub Pages</li>
-</ol>
-<p>打开 GitHub 项目 → Settings → Pages
+<li>启用 GitHub Pages <br />
+打开 GitHub 项目 → Settings → Pages
 Source 选择 gh-pages 分支
 保存后，网站会出现在 https://你的用户名.github.io/你的项目/
-这样，你的开发机上 完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。</p>
+这样，你的开发机上 完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。</li>
+</ol>
 
 
 
