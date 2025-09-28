@@ -1,20 +1,59 @@
-dev_addr: 0.0.0.0:8000
-docs_dir: notes
-
 site_name: 学习笔记
+docs_dir: docs
+dev_addr: 0.0.0.0:8000
+
 plugins:
   - search
   - awesome-pages
 
 theme:
   name: material
+  language: zh
+  features:
+#    - navigation.tabs # 顶部导航
+#    - navigation.sections #启用部分后，顶级部分在边栏中呈现为1220px以上视口的组，但在移动设备上保持原样
+#    - navigation.expand # 打开Tab时左侧目录全部展开
+    - navigation.top # 返回顶部的按钮 在上滑时出现
+    - palette.scheme  # 启用主题切换
+
+    - search.highlight  # 搜索出的文章关键词加入高亮
+    - search.suggest  # 搜索输入一些字母时推荐补全整个单词
+    - search.share                  # 搜索分享
+
+    - content.tabs.link
+    - content.tooltips
+    - content.code.copy #代码复制
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+
+    - header.autohide               # 自动隐匿头部
+  palette:
+    # 跟随系统偏好
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      toggle:
+        icon: material/brightness-7
+        name: 亮色模式
+      primary: deep blue
+      accent: blue
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      toggle:
+        icon: material/brightness-4
+        name: 暗色模式
+      primary: blue
+      accent: blue
+    #icon:
+    #  repo: fontawesome/brands/github #右上角图标
+    #  logo: logo
+
   custom_dir: overrides
 
 extra:
   generator: false
-
 extra_css:
-  - styles/footer.css
+  - css/footer.css
 
 exclude_docs: |
   .git/
