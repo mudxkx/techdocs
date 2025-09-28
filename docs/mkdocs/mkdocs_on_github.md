@@ -9,26 +9,24 @@ title: 在Github Pages中使用Mkdocs
 ## 设置步骤 
 假设项目名称为：techdocs。
 
-1. 仓库结构
+### 仓库结构
 
- ```bash
- techdocs/
- ├── docs/  # 文档目录，所有md文档都在这个目录及子目录下
- │   ├── index.md  
- │   └── about.md
- ├── mkdocs.yml      # mkdocs 配置文件
- └── .github/
-     └── workflows/
-         └── deploy.yml  #GitHub Actions 工作流
- ```
+```bash
+techdocs/
+├── docs/           # 文档目录，所有md文档都在这个目录及子目录下
+│   ├── index.md  
+│   └── about.md
+├── mkdocs.yml      # mkdocs 配置文件
+└── .github/
+    └── workflows/
+        └── deploy.yml  #GitHub Actions 工作流
+```
 
-2. 创建仓库
-
+### 创建仓库
 
 在 Github 上创建一个仓库 techdocs。
 
-3. 本地设置
-
+### 本地设置
 
 建立一个目录techdocs，目录下的结构同上面的仓库结构。
 配置 GitHub Actions 工作流
