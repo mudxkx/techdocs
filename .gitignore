@@ -1,0 +1,6 @@
+_pycache_
+.DS_Store
+._.DS_Store
+.ipynb_checkpoints/
+.virtual_documents/
+.vscode/

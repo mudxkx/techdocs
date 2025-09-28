@@ -1,0 +1,9 @@
+site_name: 学习笔记
+
+dev_addr: 0.0.0.0:8000
+
+nav:
+  - Home: index.md
+  - About: about.md
+theme:
+  name: material
