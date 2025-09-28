@@ -1,6 +1,5 @@
 ---
 title: Forgejo简介
-layout: default
 ---
 
 # Forgejo简介
@@ -16,7 +15,7 @@ Forgejo 是从另一个非常流行的自托管 Git 平台 Gitea 分叉（Fork�
 
 因此，Forgejo 的诞生初衷就是为了建立一个 由非营利性组织（Forgejo 基金会）管理、完全由社区主导 的代码协作平台。
 
-### 核心功能包括：
+### 核心功能
 
 - Git 代码仓库托管
 
@@ -30,7 +29,7 @@ Forgejo 是从另一个非常流行的自托管 Git 平台 Gitea 分叉（Fork�
 
 - 用户、团队和组织管理
 
-## Forgejo 的优势
+## 优势
 Forgejo 的优势可以从几个维度来看，尤其是与它的“前身” Gitea 和业界巨头 GitHub/GitLab 进行比较。
 
 1. 核心哲学与治理模式（最显著的优势）
@@ -68,7 +67,7 @@ Forgejo 的优势可以从几个维度来看，尤其是与它的“前身” Gi
 - 明确的长远愿景： Forgejo 不仅仅满足于做一个“轻量级 Git 服务”，其目标是成为一个完整的、协作友好的软件锻造（Software Forge）平台，与更大的自由软件生态系统（如 Codeberg）紧密集成。
 
 - 更宽松的许可证兼容性： Forgejo 在依赖库的许可证选择上更为谨慎，避免引入有争议的许可证，确保整个项目的健康发展。
-  
+ 
 ## 总结与适用场景
 
 | 特性 | Forgejo | Gitea | GitHub / GitLab.com |
