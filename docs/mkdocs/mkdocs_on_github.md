@@ -10,7 +10,6 @@ title: 在Github Pages中使用Mkdocs
 假设项目名称为：techdocs。
 
 1. 仓库结构
-
 ```bash
 techdocs/
 ├── docs/  # 文档目录，所有md文档都在这个目录及子目录下
@@ -21,7 +20,6 @@ techdocs/
     └── workflows/
         └── deploy.yml  #GitHub Actions 工作流
 ```
-
 
 2. 在Github上创建仓库
 创建一个仓库 techdocs。
@@ -95,7 +93,6 @@ theme:               # 使用的主题
 
 
 5. 写markdown文档
-
 docs目录下可以建立子目录，例如：linux、github等。
 首先，编写index.md，例如：
 ```markdown
@@ -104,7 +101,6 @@ docs目录下可以建立子目录，例如：linux、github等。
 ```
 
 6. 连上仓库
-
 ```bash
 git init
 git add .
