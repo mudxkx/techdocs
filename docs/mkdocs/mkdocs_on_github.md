@@ -122,4 +122,4 @@ git push -u origin main
 打开 GitHub 项目 → Settings → Pages
 Source 选择 gh-pages 分支
 保存后，网站会出现在 https://你的用户名.github.io/你的项目/
-这样，你的开发机上 完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。
+这样，本地完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。
