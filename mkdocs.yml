@@ -53,7 +53,7 @@ theme:
 extra:
   generator: false
 extra_css:
-  - css/footer.css
+  - stylesheets/footer.css
 
 exclude_docs: |
   .git/
