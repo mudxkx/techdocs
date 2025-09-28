@@ -28,7 +28,7 @@ techdocs/
 
 ### 本地设置
 
-建立一个目录techdocs，目录下的结构同上面的仓库结构。
+建立一个目录techdocs，目录结构同上面的仓库结构。
 配置 GitHub Actions 工作流
 在仓库里新建文件： .github/workflows/deploy.yml
 ```yaml
@@ -79,7 +79,7 @@ jobs:
           publish_dir: ./site
 ```
 
-4. 设置mkdocs
+### 设置mkdocs
 
 在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：
 ```yaml
@@ -96,7 +96,7 @@ theme:               # 使用的主题
 ``` 
 
 
-5. 写markdown文档
+### 写markdown文档
 
 docs目录下可以建立子目录，例如：linux、github等。
 首先，编写index.md，例如：
@@ -106,7 +106,7 @@ docs目录下可以建立子目录，例如：linux、github等。
 ``` 
 
 
-6. 连上仓库
+### 同步仓库
 
 ```bash
 git init
@@ -117,7 +117,7 @@ git remote add origin git@github.com:<username>/techdocs.git
 git push -u origin main
 ```
 
-7. 启用 GitHub Pages
+### 启用 GitHub Pages
    
 打开 GitHub 项目 → Settings → Pages
 Source 选择 gh-pages 分支
