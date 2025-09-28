@@ -476,6 +476,42 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置mkdocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      写markdown文档
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      同步仓库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      启用 GitHub Pages
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -560,6 +596,42 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置mkdocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      写markdown文档
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      同步仓库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      启用 GitHub Pages
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -598,7 +670,7 @@
 <h3 id="_3">创建仓库</h3>
 <p>在 Github 上创建一个仓库 techdocs。</p>
 <h3 id="_4">本地设置</h3>
-<p>建立一个目录techdocs，目录下的结构同上面的仓库结构。
+<p>建立一个目录techdocs，目录结构同上面的仓库结构。
 配置 GitHub Actions 工作流
 在仓库里新建文件： .github/workflows/deploy.yml</p>
 <pre><code class="language-yaml"># .github/workflows/deploy.yml
@@ -647,9 +719,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
 </code></pre>
-<ol>
-<li>设置mkdocs</li>
-</ol>
+<h3 id="mkdocs">设置mkdocs</h3>
 <p>在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：</p>
 <pre><code class="language-yaml">site_name: 我的笔记   # 项目名称
 docs_dir: docs       # 指定文档目录，缺省是docs
@@ -662,17 +732,13 @@ theme:               # 使用的主题
   name: material。   # 在deploy.yml中，ip install mkdocs-material
   language: zh       # 主题的语言
 </code></pre>
-<ol>
-<li>写markdown文档</li>
-</ol>
+<h3 id="markdown">写markdown文档</h3>
 <p>docs目录下可以建立子目录，例如：linux、github等。
 首先，编写index.md，例如：</p>
 <pre><code class="language-markdown"># 欢迎来到shanren的学习笔记
 这里是我的计算机技术学习笔记，使用 Markdown 编写。
 </code></pre>
-<ol>
-<li>连上仓库</li>
-</ol>
+<h3 id="_5">同步仓库</h3>
 <pre><code class="language-bash">git init
 git add .
 git commit -m &quot;first commit&quot;
@@ -680,9 +746,7 @@ git branch -M main
 git remote add origin git@github.com:&lt;username&gt;/techdocs.git
 git push -u origin main
 </code></pre>
-<ol>
-<li>启用 GitHub Pages</li>
-</ol>
+<h3 id="github-pages">启用 GitHub Pages</h3>
 <p>打开 GitHub 项目 → Settings → Pages
 Source 选择 gh-pages 分支
 保存后，网站会出现在 https://你的用户名.github.io/你的项目/
