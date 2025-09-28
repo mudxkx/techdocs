@@ -1,0 +1,45 @@
+# .github/workflows/deploy.yml
+name: Deploy MkDocs Site
+
+# 触发条件：当推送到 main 分支时
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    # 运行在 GitHub 提供的虚拟机上
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出仓库代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      # 3. 安装 MkDocs 和主题
+      - name: Install dependencies
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
+          pip mkdocs-awesome-pages-plugin
+          # 如果你在 mkdocs.yml 中使用了 material 主题
+          # 如果需要其他插件，也在这里安装，例如：
+          # pip install mkdocs-minify-plugin
+
+      # 4. 构建网站（生成 site/ 目录）
+      - name: Build site
+        run: mkdocs build
+
+      # 5. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
