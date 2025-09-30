@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../introduction/">
+        <link rel="prev" href="../../forgejo/introduction/">
       
+      
+        <link rel="next" href="../introduction/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>在Github Pages中使用Mkdocs - 计算机技术笔记</title>
+        <title>在Github Pages中使用Mkdocs（基础篇） - 计算机技术笔记</title>
       
     
     
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              在Github Pages中使用Mkdocs
+              在Github Pages中使用Mkdocs（基础篇）
             
           </span>
         </div>
@@ -364,29 +366,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    mkdocs简介
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -404,7 +383,7 @@
   
   
   <span class="md-ellipsis">
-    在Github Pages中使用Mkdocs
+    在Github Pages中使用Mkdocs（基础篇）
     
   </span>
   
@@ -417,7 +396,7 @@
   
   
   <span class="md-ellipsis">
-    在Github Pages中使用Mkdocs
+    在Github Pages中使用Mkdocs（基础篇）
     
   </span>
   
@@ -440,46 +419,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#github-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      设置步骤
+      设置 GitHub Actions 自动化部署
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="设置步骤">
+    <nav class="md-nav" aria-label="设置 GitHub Actions 自动化部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、本地设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、本地设置">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      仓库结构
+      (一）仓库目录结构
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#mkdocsyml" class="md-nav__link">
     <span class="md-ellipsis">
-      创建仓库
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地设置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      设置mkdocs
+      （二）创建 mkdocs.yml 配置文件
     </span>
   </a>
   
@@ -488,7 +459,67 @@
           <li class="md-nav__item">
   <a href="#markdown" class="md-nav__link">
     <span class="md-ellipsis">
-      写markdown文档
+      （三）编写markdown文档
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      （四）创建 GitHub Actions 工作流文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、在Github上设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、在Github上设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）设置 GitHub 使用 SSH 连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）创建仓库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）修改仓库Action权限（重要）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （四）推送代码并触发构建
     </span>
   </a>
   
@@ -497,7 +528,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      同步仓库
+      （五）查看构建状态
     </span>
   </a>
   
@@ -506,9 +537,23 @@
           <li class="md-nav__item">
   <a href="#github-pages" class="md-nav__link">
     <span class="md-ellipsis">
-      启用 GitHub Pages
+      （六）启用 GitHub Pages
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （七）访问你的网站
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -521,6 +566,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    mkdocs简介
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -560,46 +628,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#github-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      设置步骤
+      设置 GitHub Actions 自动化部署
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="设置步骤">
+    <nav class="md-nav" aria-label="设置 GitHub Actions 自动化部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、本地设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、本地设置">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      仓库结构
+      (一）仓库目录结构
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#mkdocsyml" class="md-nav__link">
     <span class="md-ellipsis">
-      创建仓库
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地设置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      设置mkdocs
+      （二）创建 mkdocs.yml 配置文件
     </span>
   </a>
   
@@ -608,7 +668,67 @@
           <li class="md-nav__item">
   <a href="#markdown" class="md-nav__link">
     <span class="md-ellipsis">
-      写markdown文档
+      （三）编写markdown文档
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      （四）创建 GitHub Actions 工作流文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、在Github上设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、在Github上设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）设置 GitHub 使用 SSH 连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）创建仓库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）修改仓库Action权限（重要）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （四）推送代码并触发构建
     </span>
   </a>
   
@@ -617,7 +737,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      同步仓库
+      （五）查看构建状态
     </span>
   </a>
   
@@ -626,9 +746,23 @@
           <li class="md-nav__item">
   <a href="#github-pages" class="md-nav__link">
     <span class="md-ellipsis">
-      启用 GitHub Pages
+      （六）启用 GitHub Pages
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （七）访问你的网站
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -653,26 +787,53 @@
 
 
 
-<h1 id="github-pagesmkdocs">在Github Pages中使用Mkdocs</h1>
+<h1 id="github-pagesmkdocs"><strong>在Github Pages中使用Mkdocs（基础篇）</strong></h1>
 <p>不在本地安装 mkdocs，而是把它放在 CI/CD 流程里（比如 GitHub Actions、Forgejo Actions、GitLab CI）。这样只要 git push，服务器就会自动拉取代码、执行 mkdocs build，并把生成的静态网站部署到目标位置（比如 GitHub Pages、服务器的 /var/www/html，或者一个专门的分支）。</p>
-<h2 id="_1">设置步骤</h2>
-<p>假设项目名称为：techdocs。</p>
-<h3 id="_2">仓库结构</h3>
-<pre><code class="language-bash">techdocs/
-├── docs/           # 文档目录，所有md文档都在这个目录及子目录下
-│   ├── index.md  
-│   └── about.md
-├── mkdocs.yml      # mkdocs 配置文件
-└── .github/
-    └── workflows/
-        └── deploy.yml  #GitHub Actions 工作流
+<p><strong>使用 GitHub Actions 在云端自动构建和部署 MkDocs 网站</strong>。</p>
+<p>这种方法的优势非常明显：</p>
+<ul>
+<li><strong>无需在本地安装</strong> MkDocs、Python 或任何依赖。</li>
+<li><strong>自动化</strong>：每次 <code>git push</code> 到 <code>main</code> 分支时，GitHub 会自动构建网站并部署。</li>
+<li><strong>环境一致</strong>：避免了“在我机器上能运行”的问题。</li>
+</ul>
+<h2 id="github-actions"><strong>设置 GitHub Actions 自动化部署</strong></h2>
+<p>假设项目名称为：techdocs。详细步骤如下：</p>
+<h3 id="_1"><strong>一、本地设置</strong></h3>
+<h4 id="_2"><strong>(一）仓库目录结构</strong></h4>
+<pre><code class="language-bash">   techdocs/
+       ├── mkdocs.yml          # mkdocs 配置文件（必须）
+       ├── docs/               # 文档目录，所有md文档都在这个目录及子目录下
+       │   ├── index.md        # MkDocs 项目的首页文档，也是整个文档网站的入口页面
+       │   ├── techdocs/              # 子目录按需创建
+       │   │   └── python-basics.md   # md文档，将转化为网页显示
+       │   ├── life/
+       │   │   └── travel-japan.md
+       │   └── ...
+       └── .github/            # GitHub Actions 工作流的目录
+           └── workflows/
+               └── deploy.yml  # GitHub Actions 工作流（需要创建）
 </code></pre>
-<h3 id="_3">创建仓库</h3>
-<p>在 Github 上创建一个仓库 techdocs。</p>
-<h3 id="_4">本地设置</h3>
-<p>建立一个目录techdocs，目录结构同上面的仓库结构。
-配置 GitHub Actions 工作流
-在仓库里新建文件： .github/workflows/deploy.yml</p>
+<p><strong>关键</strong>：确保 <code>mkdocs.yml</code> 文件在仓库的<strong>根目录</strong>。    </p>
+<h4 id="mkdocsyml"><strong>（二）创建 mkdocs.yml 配置文件</strong></h4>
+<p>在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置，不使用第三方主题：    </p>
+<pre><code class="language-yaml">site_name: 我的笔记   # 项目名称
+docs_dir: docs       # 指定文档目录，缺省是docs
+
+plugins:             # 使用的插件
+  - search           # search插件是内置且默认启用的
+
+</code></pre>
+<h4 id="markdown"><strong>（三）编写markdown文档</strong></h4>
+<p>首先，编写index.md，例如：    </p>
+<pre><code class="language-markdown"># 欢迎来到我的学习笔记
+这里是我的学习笔记，使用 Markdown 编写。
+</code></pre>
+<p>根据需要，在docs目录下建立子目录，例如：tech、life等。</p>
+<h4 id="github-actions_1"><strong>（四）创建 GitHub Actions 工作流文件</strong></h4>
+<p>在仓库中创建一个特殊的文件来定义自动化流程。</p>
+<p>在你的仓库根目录创建文件夹 <code>.github/workflows/</code>。
+   在该文件夹中创建一个 YAML 文件，例如 <code>deploy.yml</code>。</p>
+<p><strong>文件内容 <code>deploy.yml</code>：</strong></p>
 <pre><code class="language-yaml"># .github/workflows/deploy.yml
 name: Deploy MkDocs Site
 
@@ -685,7 +846,7 @@ on:
 jobs:
   deploy:
     # 运行在 GitHub 提供的虚拟机上
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    # Github远程ubuntu虚拟机，占用的是Github的资源
 
     steps:
       # 1. 检出仓库代码
@@ -701,11 +862,10 @@ jobs:
       # 3. 安装 MkDocs 和主题
       - name: Install dependencies
         run: |
-          pip install mkdocs
-          pip install mkdocs-material
-          pip install mkdocs-awesome-pages-plugin
-          # 如果你在 mkdocs.yml 中使用了 material 主题
+          pip install mkdocs    # 这里只使用mkdocs，不使用第三方主题和插件          
+          # pip install mkdocs-material # 如果在 mkdocs.yml 中使用 material 主题
           # 如果需要其他插件，也在这里安装，例如：
+          # pip install mkdocs-awesome-pages-plugin
           # pip install mkdocs-minify-plugin
 
       # 4. 构建网站（生成 site/ 目录）
@@ -719,26 +879,37 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
 </code></pre>
-<h3 id="mkdocs">设置mkdocs</h3>
-<p>在 MkDocs 中，mkdocs.yml 是项目的核心配置文件，用于定义网站的结构、主题、插件等所有设置。以下是一个简单的配置：</p>
-<pre><code class="language-yaml">site_name: 我的笔记   # 项目名称
-docs_dir: docs       # 指定文档目录，缺省是docs
-
-plugins:             # 使用的插件
-  - search
-  - awesome-pages    # 在deploy.yml中，pip install mkdocs-awesome-pages-plugin
-
-theme:               # 使用的主题
-  name: material。   # 在deploy.yml中，ip install mkdocs-material
-  language: zh       # 主题的语言
-</code></pre>
-<h3 id="markdown">写markdown文档</h3>
-<p>docs目录下可以建立子目录，例如：linux、github等。
-首先，编写index.md，例如：</p>
-<pre><code class="language-markdown"># 欢迎来到shanren的学习笔记
-这里是我的计算机技术学习笔记，使用 Markdown 编写。
-</code></pre>
-<h3 id="_5">同步仓库</h3>
+<h3 id="github"><strong>二、在Github上设置</strong></h3>
+<h4 id="github-ssh"><strong>（一）设置 GitHub 使用 SSH 连接</strong></h4>
+<p>略</p>
+<h4 id="_3"><strong>（二）创建仓库</strong></h4>
+<p>在 Github 上创建一个仓库 techdocs。    </p>
+<h4 id="action"><strong>（三）修改仓库Action权限（重要）</strong></h4>
+<ol>
+<li>
+<p>进入你的 GitHub 仓库 -&gt; <code>Settings</code>。    </p>
+</li>
+<li>
+<p>在左侧菜单中找到 <code>Actions</code> -&gt; <code>General</code>。    </p>
+</li>
+<li>
+<p>向下滚动到 <strong>"Workflow permissions"</strong>。缺省的是这样的：    </p>
+</li>
+</ol>
+<p><img alt="" src="../assets/01.png" /></p>
+<ol>
+<li>
+<p>确保选择了 <strong><code>Read and write permissions</code></strong>。    </p>
+<ul>
+<li>❌ 不要选 <code>Read repository contents permission</code>。</li>
+<li>✅ 必须选 <code>Read and write permissions</code>，因为部署需要写入 <code>gh-pages</code> 分支。</li>
+</ul>
+</li>
+<li>
+<p>点击 <code>Save</code>。    </p>
+</li>
+</ol>
+<h4 id="_4"><strong>（四）推送代码并触发构建</strong></h4>
 <pre><code class="language-bash">git init
 git add .
 git commit -m &quot;first commit&quot;
@@ -746,11 +917,39 @@ git branch -M main
 git remote add origin git@github.com:&lt;username&gt;/techdocs.git
 git push -u origin main
 </code></pre>
-<h3 id="github-pages">启用 GitHub Pages</h3>
-<p>打开 GitHub 项目 → Settings → Pages
-Source 选择 gh-pages 分支
-保存后，网站会出现在 https://你的用户名.github.io/你的项目/
-这样，本地完全不用安装 mkdocs，只要 push，GitHub 就会自动编译 + 部署。</p>
+<h4 id="_5"><strong>（五）查看构建状态</strong></h4>
+<ol>
+<li>
+<p>进入你的 GitHub 仓库。    </p>
+</li>
+<li>
+<p>点击 <code>Actions</code> 标签页。    </p>
+</li>
+<li>
+<p>你会看到一个名为 "Deploy MkDocs Site" 的工作流正在运行。    </p>
+</li>
+<li>
+<p>等待它完成（通常需要 1-2 分钟）。    </p>
+</li>
+</ol>
+<p>如果一切顺利，你会看到绿色的勾号。    </p>
+<p><img alt="" src="../assets/02.png" /></p>
+<h4 id="github-pages"><strong>（六）启用 GitHub Pages</strong></h4>
+<p><strong>1. 进入 techdocs GitHub 仓库 -&gt; <code>Settings</code> -&gt; <code>Pages</code>。</strong>      </p>
+<p><img alt="" src="../assets/03.png" /></p>
+<p><strong>2. 在 <code>Build and deployment</code> 部分：</strong>  <br />
+   - <strong>Branch</strong>: 选择 <code>gh-pages</code>
+   - <strong>/root</strong>: 选择根目录</p>
+<p><img alt="" src="../assets/04.png" /></p>
+<p><strong>3. 点击 <code>Save</code>。</strong>    </p>
+<p><strong>注意</strong>：<code>actions-gh-pages</code> Action 会自动创建 <code>gh-pages</code> 分支并推送构建后的文件。</p>
+<h4 id="_6"><strong>（七）访问你的网站</strong></h4>
+<p>构建成功后，网站就可以通过以下地址访问了：    </p>
+<pre><code>https://&lt;你的用户名&gt;.github.io/&lt;仓库名&gt;/
+</code></pre>
+<p>例如：<code>https://mudxkx.github.io/techdocs/</code></p>
+<p><img alt="" src="../assets/05.png" /></p>
+<p>下一篇，我们将使用mkdocs的第三方主题</p>
 
 
 
