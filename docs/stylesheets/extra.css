@@ -1,21 +1,16 @@
-/* 为所有标准页面设置全宽 */
-article.md-content__inner {
-  max-width: none !important;
-  width: 95%;
+/* 取消内容区域的最大宽度 */
+.md-content__inner,
+.md-main__inner {
+    max-width: none !important;
 }
 
-/* 针对有侧边栏的页面 */
-[data-md-component="container"] {
-  max-width: 95% !important;
+/* 可选：让整个主容器也适应宽度 */
+.md-main__inner > article {
+    max-width: none !important;
+    width: 100%;
 }
 
-/* 确保导航页面也全宽 */
-.md-nav__link {
-  white-space: normal;
-}
-
-/* 调整表格等元素在全宽模式下的显示 */
-.md-typeset table:not([class]) {
-  display: table;
-  width: 95%;
+/* 如果你希望侧边栏也靠左，内容完全铺开，可添加以下 */
+.md-sidebar--primary {
+    max-width: none !important;
 }
