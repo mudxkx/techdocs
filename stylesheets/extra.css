@@ -12,6 +12,7 @@
   padding-right: 1rem;
 }
 
+/* 调整头部宽度 */
 .md-header__inner {
   max-width: 100% !important;
   padding-left: 2rem;
