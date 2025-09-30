@@ -1,1 +1,5 @@
 title: mkdocs
+
+nav:
+  - mkdocs简介: introduction.md 
+  - Github Pages使用mkdocs(基础篇): basic.md
