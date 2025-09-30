@@ -30,7 +30,7 @@ theme:
     - header.autohide               # 自动隐匿头部
 
     - layout.content.max-width: none
-    - layout.content.min-width: 100%
+#    - layout.content.min-width: 100%
   palette:
     # 跟随系统偏好
     - scheme: default
