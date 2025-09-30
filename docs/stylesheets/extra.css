@@ -1,15 +1,13 @@
-
 /* 设置内容区域宽度为视口宽度的 90% */
 .md-content__inner,
 .md-main__inner {
-    max-width: 90vw !important;   /* 90% of viewport width */
+    max-width: min(90vw, 90rem) !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 2rem;   /* 可选：增加内边距避免贴边 */
-    padding-right: 2rem;  /* 可选 */
+    padding-left: 2rem;
+    padding-right: 2rem;
     box-sizing: border-box;
 }
-
 
 /* 可选：让整个主容器也适应宽度 */
 .md-main__inner > article {
