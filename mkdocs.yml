@@ -28,6 +28,9 @@ theme:
     - content.code.annotate
 
     - header.autohide               # 自动隐匿头部
+
+    - layout.content.max-width: none
+    - layout.content.min-width: 100%
   palette:
     # 跟随系统偏好
     - scheme: default
@@ -54,7 +57,6 @@ extra:
   generator: false
 extra_css:
   - stylesheets/footer.css
-  - stylesheets/extra.css
 
 exclude_docs: |
   .git/
