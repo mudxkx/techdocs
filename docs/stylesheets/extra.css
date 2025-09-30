@@ -1,6 +1,6 @@
 /* 撑满全屏，不留两边空白 */
 .md-main__inner {
-  max-width: 95% !important;
+  max-width: 90% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
