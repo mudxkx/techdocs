@@ -1,0 +1,21 @@
+/* 撑满全屏，不留两边空白 */
+.md-main__inner {
+  max-width: 95% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 内容区域跟随全屏 */
+.md-content {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 手机端留一点边距，避免贴边 */
+@media screen and (max-width: 768px) {
+  .md-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

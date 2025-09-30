@@ -57,6 +57,7 @@ extra:
   generator: false
 extra_css:
   - stylesheets/footer.css
+  - stylesheets/extra.css
 
 exclude_docs: |
   .git/
