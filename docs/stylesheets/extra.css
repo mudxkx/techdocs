@@ -1,11 +1,13 @@
 /* 调整主内容宽度：例如 90% 浏览器宽度 */
 .md-main__inner {
-  max-width: 90% !important;  /* 你可以改成 85%, 80% */
+  max-width: 95% !important;  /* 你可以改成 85%, 80% */
   margin: 0 auto;             /* 居中 */
 }
 
-/* 保持内容不紧贴边界 */
+/* 内容区域跟随全屏 */
 .md-content {
+  max-width: 100% !important;
+  margin: 0 !important;
   padding-left: 1rem;
   padding-right: 1rem;
 }
