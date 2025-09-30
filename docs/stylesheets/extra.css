@@ -1,12 +1,12 @@
 /* 为所有标准页面设置全宽 */
 article.md-content__inner {
   max-width: none !important;
-  width: 90%;
+  width: 95%;
 }
 
 /* 针对有侧边栏的页面 */
 [data-md-component="container"] {
-  max-width: 90% !important;
+  max-width: 95% !important;
 }
 
 /* 确保导航页面也全宽 */
@@ -17,5 +17,5 @@ article.md-content__inner {
 /* 调整表格等元素在全宽模式下的显示 */
 .md-typeset table:not([class]) {
   display: table;
-  width: 90%;
+  width: 95%;
 }
